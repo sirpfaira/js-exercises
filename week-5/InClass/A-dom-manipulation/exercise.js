@@ -89,3 +89,52 @@ function increaseLinkText() {
 
 const increaseButton = document.querySelector("#largerLinksBtn");
 increaseButton.addEventListener("click", increaseLinkText);
+
+/*
+Task 6
+======
+
+Add a form element to the body
+*/
+let myBody = document.querySelector("body");
+let form = document.createElement("form");
+
+// Create an input element for Full Name
+var email = document.createElement("input");
+email.setAttribute("type", "text");
+email.setAttribute("email", "Email");
+email.setAttribute("placeholder", "Enter your email address");
+
+//Create a radio group
+let radioGroup = document.createElement("select");
+let option1 = document.createElement("option");
+option1.text = "USA";
+let option2 = document.createElement("option");
+option2.text = "UK";
+let option3 = document.createElement("option");
+option3.text = "Africa";
+let option4 = document.createElement("option");
+option4.text = "Asia";
+radioGroup.add(option1, 0);
+radioGroup.add(option2, 1);
+radioGroup.add(option3, 2);
+radioGroup.add(option4, 3);
+
+// create a submit button
+var submit = document.createElement("input");
+submit.setAttribute("type", "submit");
+submit.setAttribute("value", "Subscribe");
+
+// Append the form items to the form
+form.appendChild(email);
+// Inserting a line break
+let br = document.createElement("br");
+form.appendChild(br.cloneNode());
+//Inserting radio group
+form.appendChild(radioGroup);
+// Inserting a line break
+form.appendChild(br.cloneNode());
+//inserting submit button
+form.appendChild(submit);
+
+myBody.appendChild(form);
